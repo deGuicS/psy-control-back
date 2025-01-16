@@ -1,3 +1,6 @@
-it("should sum", () => {
-  expect(2 + 2).toBe(4);
+import Person from "./index";
+
+it("should say my name", () => {
+  const person = new Person();
+  expect(person.sayMyName()).toBe("Guilherme");
 });

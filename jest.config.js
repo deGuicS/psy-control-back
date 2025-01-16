@@ -6,4 +6,5 @@ module.exports = {
   transform: {
     ".+\\.ts$": "ts-jest",
   },
+  moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
 };

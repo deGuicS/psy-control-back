@@ -1,5 +1,7 @@
-const message = "gui";
+class Person {
+  sayMyName() {
+    return "Guilherme";
+  }
+}
 
-console.log(message);
-
-console.log("asadsd");
+export default Person;
