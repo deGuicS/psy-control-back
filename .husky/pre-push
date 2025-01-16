@@ -1,1 +1,1 @@
-npm run check-outdated && npm run test && npm run test:push
+npm run check-outdated && npm run test

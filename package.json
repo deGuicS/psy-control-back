@@ -4,11 +4,11 @@
   "main": "index.js",
   "scripts": {
     "dev:server": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
+    "build": "npx tsc",
     "check-outdated": "npx check-outdated --ignore-pre-releases --ignore-packages tsconfig-paths,eslint",
     "husky:init": "husky init",
     "test": "jest --passWithNoTests",
     "test:watch": "npm run test --watch",
-    "test:push": "npm run test --coverage",
     "prepare": "husky"
   },
   "keywords": [],
