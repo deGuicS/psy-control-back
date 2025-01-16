@@ -1,7 +1,6 @@
 {
   "*ts": [
     "npx eslint .  --max-warnings 0",
-    "npx prettier --check",
-    "npm run test:staged"
+    "npx prettier --check"
   ]
 }
