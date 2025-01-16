@@ -1,6 +1,6 @@
 class Person {
   sayMyName() {
-    return "Guilherme.com";
+    return "Guilherme";
   }
 }
 
