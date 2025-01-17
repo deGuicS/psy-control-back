@@ -10,6 +10,9 @@
     "strict": true,
     "skipLibCheck": true,
     "esModuleInterop": true,             // Adiciona suporte para módulos ES6
-    "allowSyntheticDefaultImports": true // Permite importar módulos CommonJS como default
+    "allowSyntheticDefaultImports": true, // Permite importar módulos CommonJS como default
+    "paths": {
+      "@/*": ["*"]
+    },
   }
 }
