@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev:server": "nodemon --watch 'src/' --exec 'ts-node -r tsconfig-paths/register src/index.ts' -e ts",
+    "dev:server": "nodemon --watch 'src/' --exec 'ts-node -r tsconfig-paths/register src/server/app.ts' -e ts",
     "build": "tsc && tsc-alias",
     "check-outdated": "npx check-outdated --ignore-pre-releases --ignore-packages tsconfig-paths,eslint",
     "husky:init": "husky init",
@@ -34,5 +34,8 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.19.1"
+  },
+  "dependencies": {
+    "fastify": "^5.2.1"
   }
 }
