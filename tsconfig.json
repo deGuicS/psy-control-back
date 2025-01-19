@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ES2016",
     "module": "commonjs",
     "rootDir": "src",
     "outDir": "./dist",
@@ -9,10 +9,10 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,             // Adiciona suporte para módulos ES6
+    "esModuleInterop": true, // Adiciona suporte para módulos ES6
     "allowSyntheticDefaultImports": true, // Permite importar módulos CommonJS como default
     "paths": {
       "@/*": ["*"]
-    },
+    }
   }
 }
