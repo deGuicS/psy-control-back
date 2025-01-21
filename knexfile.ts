@@ -2,7 +2,13 @@ import * as dotenv from "dotenv";
 import * as path from "path";
 import * as fs from "fs";
 
-const dotenvConfigFileName = ".env";
+let dotenvConfigFileName: string;
+
+if (process.env.NODE_ENV === "test") {
+  dotenvConfigFileName = ".env.testing";
+} else {
+  dotenvConfigFileName = ".env";
+}
 const __dirname = path.resolve();
 
 const pathname = path.resolve(__dirname, dotenvConfigFileName);
@@ -16,10 +22,13 @@ dotenv.config({ path: dotenvConfigFileName });
 export default {
   client: "pg",
   connection: process.env.DATABASE_URL,
-  pool: { min: 2, max: 10 },
+  debug: true,
+  pool: { min: 1, max: 1 },
   migrations: {
     name: "migrations",
     directory: "src/shared/database/knex/migrations",
     extension: "ts",
   },
 };
+
+export {};
