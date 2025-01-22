@@ -9,17 +9,16 @@ if (process.env.NODE_ENV === "test") {
 } else {
   dotenvConfigFileName = ".env";
 }
-const __dirname = path.resolve();
 
-const pathname = path.resolve(__dirname, dotenvConfigFileName);
+const pathname = path.resolve(process.cwd(), dotenvConfigFileName);
 
 if (!fs.existsSync(pathname)) {
   throw new Error(`Create a ${dotenvConfigFileName} file and try again!`);
 }
 
-dotenv.config({ path: dotenvConfigFileName });
+dotenv.config({ path: pathname });
 
-export default {
+const config = {
   client: "pg",
   connection: process.env.DATABASE_URL,
   debug: true,
@@ -31,4 +30,4 @@ export default {
   },
 };
 
-export {};
+export default config;
