@@ -1,4 +1,4 @@
-import pingRoutes from "@/modules/ping/routes";
+import pingRoutes from "@/modules/ping/ping-routes";
 import { app } from "./app";
 
 export const routes = async () => {
