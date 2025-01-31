@@ -1,0 +1,17 @@
+meta {
+  name: Update Psychologist
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{psy_control}}/psychologist/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "guiUpdated"
+  }
+}

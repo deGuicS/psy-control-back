@@ -1,7 +1,7 @@
 import { uowRunner } from "@/shared/database/knex";
 import { FastifyRequest, FastifyReply } from "fastify";
 
-export default async function pinghandler(
+export default async function pingController(
   req: FastifyRequest,
   res: FastifyReply,
 ) {

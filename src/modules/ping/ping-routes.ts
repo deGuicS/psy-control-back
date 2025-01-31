@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
-import pinghandler from "./ping-handler";
+import pingController from "./ping-controller";
 
 export default function pingRoutes(fastify: FastifyInstance) {
-  fastify.get("/ping", {}, pinghandler);
+  fastify.get("/ping", {}, pingController);
 }
