@@ -8,6 +8,10 @@ export class PsychologistService {
     return this.psychologistRepository.create(data);
   }
 
+  async findAllPsychologists() {
+    return this.psychologistRepository.findAllPsychologists();
+  }
+
   async findPsychologistById(id: number) {
     return this.psychologistRepository.findById(id);
   }

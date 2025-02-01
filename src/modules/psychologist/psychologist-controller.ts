@@ -11,6 +11,11 @@ export class PsychologistController {
     return res.status(STATUS_CODE.CREATED).send(createdPsychologist);
   }
 
+  async findAll(res: any) {
+    const allPsychologists = await service.findAllPsychologists();
+    return res.status(STATUS_CODE.OK).send(allPsychologists);
+  }
+
   async findById(req: any, res: any) {
     const psychologistId = await service.findPsychologistById(req.params.id);
     return res.status(STATUS_CODE.OK).send(psychologistId);

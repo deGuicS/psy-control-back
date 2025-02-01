@@ -1,0 +1,20 @@
+meta {
+  name: Create Patient
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{psy_control}}/patient
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "guipaciente",
+    "email": "guipaciente@gmail.com",
+    "password": "guitestepaciente",
+    "psychologist_id": 4
+  }
+}

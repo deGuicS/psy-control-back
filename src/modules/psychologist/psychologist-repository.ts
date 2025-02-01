@@ -12,14 +12,22 @@ export class PsychologistRepository implements IPsychologistRepository {
     });
   }
 
+  async findAllPsychologists(): Promise<Psychologist[]> {
+    return await uowRunner(async (uow) => {
+      const allPsychologists = await uow("psychologists")
+        .select()
+        .returning("*");
+
+      return allPsychologists;
+    });
+  }
+
   async findById(id: number): Promise<Psychologist | null> {
     return await uowRunner(async (uow) => {
       const foundPsychologist = await uow("psychologists")
         .select()
         .where({ id: id })
         .first();
-
-      console.log(foundPsychologist.id);
 
       if (!foundPsychologist) {
         return null;
@@ -49,10 +57,10 @@ export class PsychologistRepository implements IPsychologistRepository {
 
   async delete(id: number): Promise<boolean> {
     return await uowRunner(async (uow) => {
-      const deletePsychologist = await uow("psychologists")
+      const deletedPsychologist = await uow("psychologists")
         .where({ id: id })
         .del();
-      if (deletePsychologist > 0) {
+      if (deletedPsychologist > 0) {
         return true;
       } else {
         return false;
