@@ -1,0 +1,17 @@
+meta {
+  name: Update Patient
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{psy_control}}/patient/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "patientUpdated"
+  }
+}

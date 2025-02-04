@@ -17,17 +17,17 @@ export class PatientController {
   }
 
   async findById(req: any, res: any) {
-    const foundPatient = await service.findPatientById(req.params);
+    const foundPatient = await service.findPatientById(req.params.id);
     return res.status(STATUS_CODE.OK).send(foundPatient);
   }
 
   async update(req: any, res: any) {
-    const updatedPatient = await service.updatePatient(req.params, req.body);
+    const updatedPatient = await service.updatePatient(req.params.id, req.body);
     return res.status(STATUS_CODE.OK).send(updatedPatient);
   }
 
   async delete(req: any, res: any) {
-    const deletedPatient = await service.deletePatient(req.params);
+    const deletedPatient = await service.deletePatient(req.params.id);
     return res.status(STATUS_CODE.DELETED).send(deletedPatient);
   }
 }
