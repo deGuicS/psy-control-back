@@ -11,13 +11,15 @@ if (!process.env.DATABASE_URL) {
   process.exit(1);
 }
 
-export const app = fastify();
-app.register(routes);
+const App = fastify();
+App.register(routes);
 
-app.listen({ port: 3000 }, (err) => {
+App.listen({ port: 3000 }, (err) => {
   if (err) {
     console.log(err);
   }
 
   console.log("Server running at 3000");
 });
+
+export default App;
